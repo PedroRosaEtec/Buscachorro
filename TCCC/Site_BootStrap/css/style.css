@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,300&display=swap');
+
+.body{
+    background-size: 100vh;
+}
+.custom-navbar{
+    font-family: 'Rubik Puddles', cursive;
+    font-weight: bold;
+    height: 7vh;
+    align-items: center;
+}
+.bk-color-login{
+    background-color: gray;
+
+}
+.bk-fundo{
+    background-color: #D3D3D3	;
+}
+
+.bk-fundo-container{
+    background-color: #A9A9A9	;
+}
+
+.navbar-size{
+    font-size: 24px;
+}
+
+.card-float{
+    display:flex;
+}
+
+.custom-card{
+    display:flex;
+    justify-content: center;
+    align-items:flex-start;
+}
