@@ -2,7 +2,13 @@
 require_once 'conect.php';
 
 function ValidarLogin($email, $senha){
-    
+    $sql = ' 
+      select cd_usuario from tb_usuario
+      where
+      nm_email = "'.$email.'" and
+      nm_senha = md5( "'.$senha.'")
+    ';
+
     $res = $GLOBALS['con']->query($sql);
     if($res->num_rows == 1){
         $exibe = $res->fetch_array();
