@@ -1,7 +1,6 @@
 cu
 
-Pedro
-Rosa
+
 
 Pedro
 
