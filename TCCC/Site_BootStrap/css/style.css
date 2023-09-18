@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,300&display=swap');
 
-.body{
-    background-size: 100vh;
-}
+
 .custom-navbar{
     font-family: 'Rubik Puddles', cursive;
     font-weight: bold;
@@ -10,15 +8,18 @@
     align-items: center;
 }
 .bk-color-login{
-    background-color: gray;
+    background-image: url('img/img1fullclean.png');
+    background-size: cover; /* Isso ajustará a imagem para cobrir toda a tela */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-attachment: fixed; /* Fixa a imagem no fundo */
 
 }
 .bk-fundo{
-    background-color: #D3D3D3	;
+    background-color: #0a9106	;
 }
 
 .bk-fundo-container{
-    background-color: #A9A9A9	;
+    background-color: #08ff29	;
 }
 
 .navbar-size{
