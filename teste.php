@@ -1,7 +1,0 @@
-cu
-
-
-
-Pedro
-
-asdasddad
