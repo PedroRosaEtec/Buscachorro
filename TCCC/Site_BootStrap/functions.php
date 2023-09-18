@@ -39,10 +39,10 @@ function ValidarLogin($email, $senha){
 
 function CadastrarUsuario($nome, $email, $senha){
   $sql ='insert into tb_usuario set
-  nm_usuario = "'.$nome.'",
+  nm_nome = "'.$nome.'",
   nm_email = "'.$email.'",
-  cd_senha = md5("'.$senha.'")
-  ';
+  nm_senha = md5("'.$senha.'"),
+  cd_tipo_usuario = 1;  ';
 
   $res = $GLOBALS['con']->query($sql);
 
