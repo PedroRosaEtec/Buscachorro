@@ -1,6 +1,7 @@
 <?php
 require_once 'head.php'; // Importe o código do header e as estilizações
 require_once 'functions.php'; // Importe suas funções PHP
+require_once 'footer.php'; // Importe o footer
 
 if (!empty($_POST) && $_POST['action'] == "Entrar") {
     ValidarLogin($_POST['email'], $_POST['senha']);
@@ -50,7 +51,7 @@ if (!empty($_POST) && $_POST['action'] == "Entrar") {
         <!-- Conteúdo do modal de cadastro -->
     </div>
 
-    <?php require_once 'footer.php'; // Importe o footer ?>
+    <?php  ?>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

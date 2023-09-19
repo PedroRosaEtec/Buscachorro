@@ -34,10 +34,10 @@ if (!empty($_POST) && $_POST['action'] == "Cadastrar") {
 
 
                             <label for="senha">Telefone</label>
-                            <input type="password" name="senha" required class="form-control" placeholder="Digite seu telefone"><br>
+                            <input type="number" name="telefone" required class="form-control" placeholder="Digite seu telefone" required><br>
 
                             <label for="senha">Senha</label>
-                            <input type="password" name="senha" required class="form-control" placeholder="Digite sua senha"><br>
+                            <input type="password" name="senha" required class="form-control" placeholder="Digite sua senha" required><br>
 
                             <input type="submit" value="Cadastrar" name="action" class="btn btn-success float-right"><br><br>
                         </form>
