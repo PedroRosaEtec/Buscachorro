@@ -3,7 +3,7 @@ require_once 'head.php'; // Importe o código do header e as estilizações
 require_once 'functions.php'; // Importe suas funções PHP
 
 if (!empty($_POST) && $_POST['action'] == "Cadastrar") {
-    CadastrarUsuario($_POST['nome'], $_POST['email'], $_POST['senha']);
+    CadastrarUsuario($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha'], $_POST['senha_confirmation']);
 }
 ?>
 
@@ -33,11 +33,15 @@ if (!empty($_POST) && $_POST['action'] == "Cadastrar") {
                             <input type="email" name="email" required class="form-control" placeholder="Digite seu E-mail"><br>
 
 
-                            <label for="senha">Telefone</label>
-                            <input type="number" name="telefone" required class="form-control" placeholder="Digite seu telefone" required><br>
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" name="telefone" required class="form-control" placeholder="Digite seu telefone" required><br>
 
                             <label for="senha">Senha</label>
                             <input type="password" name="senha" required class="form-control" placeholder="Digite sua senha" required><br>
+
+
+                            <label for="senha">Confirme sua senha</label>
+                            <input type="password" name="senha_confirmation" required class="form-control" placeholder="Digite sua senha novamente" required><br>
 
                             <input type="submit" value="Cadastrar" name="action" class="btn btn-success float-right"><br><br>
                         </form>

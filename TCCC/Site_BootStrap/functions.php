@@ -37,11 +37,14 @@ function ValidarLogin($email, $senha){
 };
 
 
-function CadastrarUsuario($nome, $email, $senha){
+function CadastrarUsuario($nome, $email,$telefone, $senha, $senha_confirmation){
+
+  if($senha == $senha_confirmation){
   $sql ='insert into tb_usuario set
   nm_nome = "'.$nome.'",
   nm_email = "'.$email.'",
   nm_senha = md5("'.$senha.'"),
+  ct_usuario = "'.$telefone.'",
   cd_tipo_usuario = 1;  ';
 
   $res = $GLOBALS['con']->query($sql);
@@ -60,7 +63,16 @@ function CadastrarUsuario($nome, $email, $senha){
       alert("Erro ao cadastrar. Tente novamente!");
     </script>
     ';
-  }
+  };
 }
 
+else
+{
+  print'
+  <script>
+    alert("Digite a mesma senha para ambos os campos!");
+  </script>
+  ';
+}
+}
 ?>
