@@ -3,7 +3,7 @@
 require_once 'head.php';
 
 ?>
-
+l
 <nav class="navbar navbar-expand-lg  lg bg-warning">
       <div class="container-fluid">
         
