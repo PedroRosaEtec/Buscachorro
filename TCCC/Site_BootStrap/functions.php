@@ -79,7 +79,26 @@ else
 
 function RecuperarSenha($email){
   $sql ='
-  
-  '
+  select cd_usuario from tb_usuario 
+  where
+  nm_email = "'.$email.'";
+  ';
+
+  $res = $GLOBALS['con']->query($sql);
+
+  if($res->num_rows == 1){
+    print'
+    <script>
+      alert("Email encontrado com sucesso");
+      </script>
+    ';
+  }
+    else{
+      print'
+      <script>
+      alert("Email não encontrado com sucesso");
+      </script>
+      ';
+  }
 }
 ?>
