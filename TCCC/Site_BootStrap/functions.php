@@ -75,4 +75,11 @@ else
   ';
 }
 }
+
+
+function RecuperarSenha($email){
+  $sql ='
+  
+  '
+}
 ?>

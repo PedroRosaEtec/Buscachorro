@@ -38,6 +38,7 @@ if (!empty($_POST) && $_POST['action'] == "Entrar") {
                             <div class="card-footer text-center">
                                 Ainda não é cadastrado?
                                 <a href="cadastro.php" data-toggle="modal" data-target="#cadastrar">Clique aqui!</a>
+                                <a href="recuperarSenha.php">Esqueceu a senha?</a>
                             </div>
                         </form>
                     </div>
