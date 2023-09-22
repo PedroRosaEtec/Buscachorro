@@ -11,6 +11,7 @@ require_once 'functions.php';
 </head>
 <body>
     <form action="" method="post">
+        <label for="RecuperarSenha">Recuperar senha</label><br>
         <input type="email" name = "email" required>
         <input type="submit" value="Recuperar" name = "action">
     </form>

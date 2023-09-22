@@ -84,6 +84,8 @@ function RecuperarSenha($email){
   nm_email = "'.$email.'";
   ';
 
+ 
+
   $res = $GLOBALS['con']->query($sql);
 
   if($res->num_rows == 1){
@@ -92,6 +94,31 @@ function RecuperarSenha($email){
       alert("Email encontrado com sucesso");
       </script>
     ';
+
+    $sql_alterar_senha = '
+    update tb_usuario set
+    nm_senha = md5("teste@")
+    where
+    nm_email = "'.$email.'";
+    ';
+
+    $res = $GLOBALS['con']->query($sql_alterar_senha);
+
+    if($res){
+      print'
+      <script>
+        alert("Senha redefina para padrão" );
+        </script>
+      ';
+    }
+    else{
+      print'
+      <script>
+        alert("Erro");
+        </script>
+      ';
+    }
+
   }
     else{
       print'
