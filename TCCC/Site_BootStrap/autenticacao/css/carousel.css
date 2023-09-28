@@ -1,0 +1,27 @@
+/* Estilo para o controle "Anterior" */
+.carousel-control-prev {
+    background-color: #FFA500; /* Laranja */
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev-icon {
+    color: white; /* Cor do ícone "Anterior" */
+}
+
+/* Estilo para o controle "Próximo" */
+.carousel-control-next {
+    background-color: #FFA500; /* Laranja */
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-next-icon {
+    color: white; /* Cor do ícone "Próximo" */
+}
+
+/* Estilo para hover nos controles (opcional) */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #FF8500; /* Laranja mais escuro no hover */
+}

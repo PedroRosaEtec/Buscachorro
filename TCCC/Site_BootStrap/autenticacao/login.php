@@ -14,13 +14,13 @@ if (!empty($_POST) && $_POST['action'] == "Entrar") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seu Site - Login</title>
-    <link rel="stylesheet" href="css/stylelogin.css"> <!-- Adicione esta linha para importar o CSS -->
+    <link rel="stylesheet" href="css/stylelogin.css"> 
 </head>
-<body  style="background-image: url('img/img1fullclean.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">>
+<body  style="background-image: url('img/img1fullclean.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-4 offset-sm-4">
-                <!--CARD PARA LOGIN COM MODAL-->
+                <!--CARD PARA LOGIN -->
                 <div class="card">
                     <div class="card-header text-center">
                         Login
@@ -37,7 +37,7 @@ if (!empty($_POST) && $_POST['action'] == "Entrar") {
 
                             <div class="card-footer text-center">
                                 Ainda não é cadastrado?
-                                <a href="cadastro.php" data-toggle="modal" data-target="#cadastrar">Clique aqui!</a>
+                                <a href="cadastro.php">Clique aqui!</a>
                                 <a href="recuperarSenha.php">Esqueceu a senha?</a>
                             </div>
                         </form>
@@ -47,14 +47,6 @@ if (!empty($_POST) && $_POST['action'] == "Entrar") {
         </div>
     </div>
 
-    <!-- MODAL DE CADASTRO DO USUÁRIO -->
-    <div class="modal face" id="cadastrar" data-backdrop="static">
-        <!-- Conteúdo do modal de cadastro -->
-    </div>
-
     <?php  ?>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
