@@ -5,6 +5,8 @@ require_once 'functions.php'; // Importe suas funções PHP
 if (!empty($_POST) && $_POST['action'] == "Cadastrar") {
     CadastrarUsuario($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha'], $_POST['senha_confirmation']);
 }
+
+// corrigir
 ?>
 
 <!DOCTYPE html>
