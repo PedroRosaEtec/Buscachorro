@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <form action="" method="post">
+
+
+
+        </form>
+    </body>
+</html>
 
 <?php
 
@@ -13,8 +28,10 @@ if(!empty($_FILES['arquivo'])){
         die("Arquivo muito grande! Tamanho maximo permitido: 2MB!");
     }
 
-    $diretorio = "fotos_animais/";
+  $diretorio = "fotos_animais/";
+
     $nome_arquivo = $arquivo['name'];
+
     $novo_nome_arquivo = uniqid();
     $extensao_arquivo = strtolower(pathinfo($nome_arquivo, PATHINFO_EXTENSION));
 
@@ -33,7 +50,7 @@ if(!empty($_FILES['arquivo'])){
         INSERT INTO tb_foto set
         url_imagem = "'.$nome_com_extensao.'",
         
-        '
+        ';
     }
     else{
         echo "Deu ruim!";
@@ -49,9 +66,23 @@ if(!empty($_FILES['arquivo'])){
 </head>
 <body>
     <h1>Cadastro de Cachorro</h1>
+
+    <!-- Terminar de fazer o resto do formulários!!!! -->
     
     <form action="" method="post" enctype="multipart/form-data">
         <p><label for="">Selecione o arquivo que deseja enviar!</label></p>
+
+        <label for="Nome do animal">Digite o nome do animal:</label><br><br>
+        <input type="text" name="nome_animal" placeholder="Digite o nome do animal(se souber)"><br><br>
+
+        <label for="Sexo do animal">Escola o sexo do animal</label><br><br>
+        <!-- <select name="sexo">
+            <option value="m">Macho</option>
+            <option value="f">Femêa</option>
+        </select><br><br> -->
+
+        <input type="text" name="sexo_animal" placeholder="Digite o sexo do animal(se souber)"><br><br><br>
+
         <input type="file" name="arquivo">
         <input type="submit" value="Cadastrar" name="upload">
     </form>
