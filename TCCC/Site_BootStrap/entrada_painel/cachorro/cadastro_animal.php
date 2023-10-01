@@ -1,90 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-    <body>
-        <form action="" method="post">
-
-
-
-        </form>
-    </body>
-</html>
-
 <?php
 
-strtolower(pathinfo("arquivo.jpg", PATHINFO_EXTENSION));
-
-if(!empty($_FILES['arquivo'])){
-    $arquivo = $_FILES['arquivo'];
-
-    if($arquivo['error']){
-        die("Falha ao enviar o arquivo");
-    }
-    if($arquivo['size'] > 2097152){
-        die("Arquivo muito grande! Tamanho maximo permitido: 2MB!");
-    }
-
-  $diretorio = "fotos_animais/";
-
-    $nome_arquivo = $arquivo['name'];
-
-    $novo_nome_arquivo = uniqid();
-    $extensao_arquivo = strtolower(pathinfo($nome_arquivo, PATHINFO_EXTENSION));
-
-    if($extensao_arquivo != "jpg" && $extensao_arquivo != "png"){
-        die("Extensão não permitida!");
-    }
-
-    $upload_true = move_uploaded_file($arquivo['tmp_name'], $diretorio . $novo_nome_arquivo . "." . $extensao_arquivo);
-
-    $nome_com_extensao =   $novo_nome_arquivo . "." . $extensao_arquivo;
-
-    if($upload_true){
-        //echo "Upload efetuado com sucesso! <a target = '_blanck' href='fotos_animais/$nome_com_extensao'>Clique aqui para acessa-lo!</a>";
-
-        $sql = '
-        INSERT INTO tb_foto set
-        url_imagem = "'.$nome_com_extensao.'",
-        
-        ';
-    }
-    else{
-        echo "Deu ruim!";
-    }
-
+session_start();
+if(!empty($_SESSION['id'])){
+    $_SESSION['id'];
+    $_SESSION['nome'];
 }
+else{
+    header("Location: logoff.php");
+}
+// require head e outras coisas tbm
+
+require_once './conect.php';
+require_once 'functions.php';
+
+$pagina = 'cadastrar_animal.php';
+
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Cadastro de Cachorro</title>
 </head>
+
 <body>
     <h1>Cadastro de Cachorro</h1>
 
     <!-- Terminar de fazer o resto do formulários!!!! -->
-    
+
     <form action="" method="post" enctype="multipart/form-data">
         <p><label for="">Selecione o arquivo que deseja enviar!</label></p>
 
         <label for="Nome do animal">Digite o nome do animal:</label><br><br>
-        <input type="text" name="nome_animal" placeholder="Digite o nome do animal(se souber)"><br><br>
+        <input type="text" name="nome_animal" placeholder="Digite o nome do animal"><br><br>
 
-        <label for="Sexo do animal">Escola o sexo do animal</label><br><br>
         <!-- <select name="sexo">
+        <label for="Sexo do animal">Escola o sexo do animal</label><br><br>
             <option value="m">Macho</option>
             <option value="f">Femêa</option>
-        </select><br><br> -->
+        </select><br><br> 
 
-        <input type="text" name="sexo_animal" placeholder="Digite o sexo do animal(se souber)"><br><br><br>
+        No Caso de cor e raça devera ser coloca um loop de repetição para puxar todos os dados do banco de dados para o html
+    
+    -->
 
-        <input type="file" name="arquivo">
-        <input type="submit" value="Cadastrar" name="upload">
+        <input type="file" name="imagem" required>
+
+        <input type="submit" name="action" value="Cadastrar">
     </form>
 </body>
+
 </html>
+
+<?php
+
+if (!empty($_POST)) {
+    if ($_POST['action'] == "Cadastrar") {
+        $extensao = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
+
+        if ($extensao == "png" || $extensao == "jpg" || $extensao == "jpeg" || $extensao == "jfif" || $extensao == "webp") {
+            $uploaddir = "img/";
+
+            if ($extensao == "jpeg" || $extensao == "jfif" || $extensao == "webp") {
+
+                $ext = strtolower(substr($_FILES['imagem']['name'], -5));
+
+            } else if ($extensao == "png" || $extensao == "jpg") {
+                $ext = strtolower(substr($_FILES['imagem']['name'], -4));
+            }
+
+            $imagem = md5(date("d-m-y-h-i-s") . $_FILES['imagem']['name']) . $ext;
+            $uploadfile = $uploaddir . basename($imagem);
+            move_uploaded_file($_FILES['imagem']['tmp_name'], $uploadfile);
+
+            CadastrarAnimal(
+                $_POST['nome_animal'],
+                $_SESSION['id'],
+                $pagina,
+                $imagem
+            );
+            
+        }
+    }else{
+        echo "Extensao nao permitida!";
+    }
+}
+?>
