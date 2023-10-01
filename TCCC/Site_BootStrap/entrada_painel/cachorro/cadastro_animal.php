@@ -1,17 +1,11 @@
 <?php
 
-session_start();
-if(!empty($_SESSION['id'])){
-    $_SESSION['id'];
-    $_SESSION['nome'];
-}
-else{
-    header("Location: logoff.php");
-}
+
 // require head e outras coisas tbm
 
 require_once './conect.php';
 require_once 'functions.php';
+require_once '../head.php';
 
 $pagina = 'cadastrar_animal.php';
 

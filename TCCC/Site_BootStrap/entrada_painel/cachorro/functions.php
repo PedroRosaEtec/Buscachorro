@@ -20,7 +20,7 @@ id_usuario = "'.$usuario.'";
 $res =$GLOBALS['con']->query($sql);
 
 if($res){
-    echo $sql = '
+    $sql = '
     select cd_animal from tb_animal 
     where nm_animal = "'.$nome_animal.'" and 
     id_usuario = "'.$usuario.'";    ';
@@ -38,7 +38,6 @@ else{
 }
 
  function EnviarFoto($imagem, $cd_animal, $pagina){
-    echo 
     $sql ='
     insert into tb_foto set
     url_imagem = "'.$imagem.'",
