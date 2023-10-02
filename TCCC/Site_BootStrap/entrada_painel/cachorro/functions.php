@@ -10,11 +10,19 @@ function Erro($msg, $pagina){
 }
 
 
-function CadastrarAnimal($nome_animal ,$usuario, $pagina,  $imagem){
+function CadastrarAnimal($nome_animal ,$usuario, $pagina,  $imagem, $raca, $sexo, $descricao, $pontoref, $porte, $cor){
 $sql = '
 insert into tb_animal set
 nm_animal = "'.$nome_animal.'",
-id_usuario = "'.$usuario.'";
+sexo_animal = "'.$sexo.'",
+nm_ponto_referencia = "'.$pontoref.'",
+descricao = "'.$descricao.'",
+nm_porte = "'.$porte.'",
+st_animal = 1,
+id_cor = "'.$cor.'",
+id_raca = "'.$raca.'",
+id_usuario = "'.$usuario.'"
+;
 ';
 
 $res =$GLOBALS['con']->query($sql);
