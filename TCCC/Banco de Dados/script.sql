@@ -45,6 +45,7 @@ nm_senha varchar(40) not null,
 ct_usuario varchar(20) not null,
 dt_registro DATETIME default current_timestamp,
 cd_tipo_usuario int not null,  /*  Perguntar   */
+cd_status_usuario char(1) not null,
 foreign key (cd_tipo_usuario) references tb_tipo_usuario (cd_tipo_usuario)
 );
 
