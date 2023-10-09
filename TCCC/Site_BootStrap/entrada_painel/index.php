@@ -1,6 +1,7 @@
 <?php
 require_once 'head.php';
-<<<<<<< HEAD
+//  HEAD 
+
 ?>
 
 <div class="bk-color-login">
@@ -71,7 +72,7 @@ require_once 'head.php';
         </div>
     </div>
 </div>
-=======
+<!-- ======= -->
 
 ?>
 <!DOCTYPE html>
@@ -87,4 +88,4 @@ require_once 'head.php';
         <a href="cachorro/cadastro_animal.php">Cadastrar Cachorro</a>
     </body>
 </html>
->>>>>>> fdeb941bc52a681c3eef468765d31bc588289d8a
+<!-- >>>>>>> fdeb941bc52a681c3eef468765d31bc588289d8a -->
