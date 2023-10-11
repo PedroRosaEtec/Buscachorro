@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,300&display=swap');
 
+@font-face {
+    font-family: Tiktok;
+ src:url('Tiktok.otf');
+ }
+
 *{
     padding:0;
     margin:0;
@@ -76,6 +81,8 @@
 
 /* Estilo para os links dos botões */
 .header-button a {
+    font-family: 'Tiktok';
+    font-size: 22px;
     text-decoration: none;
     color: #fff; /* Cor do texto do botão */
     background-color: #00d7ec; /* Cor de fundo do botão */
@@ -138,14 +145,14 @@ border-radius: 10px;
 
 /* Estilo para o nome "Buscachorro" */
 .nome {
-font-size: 48px; /* Tamanho da fonte grande */
-font-family: 'Roboto', sans-serif; /* Fonte bonita */
+font-size: 70px; /* Tamanho da fonte grande */
+font-family: 'Tiktok'; /* Fonte bonita */
 margin-bottom: 20px; /* Espaçamento abaixo do nome */
 }
 
 /* Estilo para a descrição */
 .descricao {
-font-size: 24px; /* Tamanho da fonte menor */
+font-size: 22px; /* Tamanho da fonte menor */
 font-family: 'Roboto', sans-serif; /* Fonte bonita */
 margin-bottom: 20px; /* Espaçamento abaixo da descrição */
 }

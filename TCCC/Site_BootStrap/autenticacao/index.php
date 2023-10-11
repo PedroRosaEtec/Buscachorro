@@ -7,7 +7,7 @@ require_once 'head.php';
     <div class="overlay">
         <div class="conteudo">
             <div class="nome">Buscachorro</div>
-            <div class="descricao">Porque cada rabo abanando merece um final feliz.</div>
+            <div class="descricao">Porque cada rabo abanando merece um final feliz!</div>
             <div class="botoes">
                 <a href="login.php" class="botao">Entrar</a>
                 <a href="cadastro.php" class="botao">Cadastrar</a>
