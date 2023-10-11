@@ -3,7 +3,9 @@ require_once 'head.php'; // Importe o código do header e as estilizações
 require_once 'functions.php'; // Importe suas funções PHP
 
 if (!empty($_POST) && $_POST['action'] == "Cadastrar") {
+    if($_POST['senha'] == $_POST['senha_confirmation']){
     CadastrarUsuario($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha'], $_POST['senha_confirmation']);
+}
 }
 
 // corrigir
@@ -14,7 +16,7 @@ if (!empty($_POST) && $_POST['action'] == "Cadastrar") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seu Site - Cadastro</title>
+    <title>Buscachorro - Cadastro</title>
     <link rel="stylesheet" href="css/stylelogin.css"> <!-- Adicione esta linha para importar o CSS -->
 </head>
 <body  style="background-image: url('img/img1fullclean.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">>
@@ -27,7 +29,7 @@ if (!empty($_POST) && $_POST['action'] == "Cadastrar") {
                         Cadastro
                     </div>
                     <div class="card-body">
-                        <form method="post" class="form-group">
+                        <form method="post" id="form" class="form-group">
                             <label for="nome">Nome</label>
                             <input type="text" name="nome" required class="form-control" placeholder="Digite seu nome"><br>
 
@@ -45,13 +47,31 @@ if (!empty($_POST) && $_POST['action'] == "Cadastrar") {
                             <label for="senha">Confirme sua senha</label>
                             <input type="password" name="senha_confirmation" id="senha_confirmation" required class="form-control" placeholder="Digite sua senha novamente" required><br>
 
-                            <input type="submit" value="Cadastrar" name="action" class="btn btn-success float-right"><br><br>
+                            <input type="submit" value="Cadastrar" name="action" id="enviar" class="btn btn-success float-right"><br><br>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Erro caso a senha seja diferente -->
+    <script>
+        document.getElementById("senha_confirmation").addEventListener("focusout", function () {
+             senha = document.getElementById("senha").value;
+             confirmacaoSenha = this.value;
+             var formulario = document.getElementById('form');
+            var botaoSubmit = document.getElementById('enviar');
+
+            if (senha !== confirmacaoSenha) {
+                this.classList.add("erro");
+                event.preventDefault();
+                botaoSubmit.disabled = true;
+            } else {
+                this.classList.remove("erro");
+                botaoSubmit.disabled = false;
+            }
+        });
+    </script>
 
     <?php require_once 'footer.php'; // Importe o footer ?>
 

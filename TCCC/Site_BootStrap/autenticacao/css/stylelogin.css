@@ -48,6 +48,11 @@ body {
     border-radius: 5px 5px 0 0;
 }
 
+/* Borda caso confirmação de senha esteja diferente da senha */
+.erro {
+    border: 2px solid red;
+ }
+
 /* Estilo para os campos de entrada de texto */
 .form-control {
     width: 90%;
