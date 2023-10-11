@@ -39,11 +39,11 @@ if (!empty($_POST) && $_POST['action'] == "Cadastrar") {
                             <input type="tel" name="telefone" required class="form-control" placeholder="Digite seu telefone" required><br>
 
                             <label for="senha">Senha</label>
-                            <input type="password" name="senha" required class="form-control" placeholder="Digite sua senha" required><br>
+                            <input type="password" name="senha" id="senha" required class="form-control" placeholder="Digite sua senha" required><br>
 
 
                             <label for="senha">Confirme sua senha</label>
-                            <input type="password" name="senha_confirmation" required class="form-control" placeholder="Digite sua senha novamente" required><br>
+                            <input type="password" name="senha_confirmation" id="senha_confirmation" required class="form-control" placeholder="Digite sua senha novamente" required><br>
 
                             <input type="submit" value="Cadastrar" name="action" class="btn btn-success float-right"><br><br>
                         </form>

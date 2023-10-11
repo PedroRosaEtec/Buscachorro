@@ -12,7 +12,7 @@
     <!-- Seus estilos personalizados -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/carousel.css"> 
-
+    <link rel="icon" type="image/x-icon" href="img/icon.ico"> <!-- Ícone na aba -->
 </head>
 <body>
     <header>
