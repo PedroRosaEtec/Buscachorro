@@ -8,7 +8,7 @@ if (!empty($_POST) && $_POST['action'] == "Cadastrar") {
 }
 }
 
-// corrigiraaaa
+// corrigiraa
 ?>
 
 <!DOCTYPE html>
