@@ -7,10 +7,10 @@ require_once 'head.php';
     <div class="overlay">
         <div class="conteudo">
             <div class="nome">Buscachorro</div>
-            <div class="descricao">Porque cada rabo abanando merece um final feliz!</div>
             <div class="botoes">
-                <a href="login.php" class="botao">Entrar</a>
-                <a href="cadastro.php" class="botao">Cadastrar</a>
+                <a href="https://www.instagram.com/buscachorro/" class="botao">Instagram</a>
+                <a href="https://www.facebook.com/sua_pagina" class="botao">Facebook</a>
+                <a href="https://api.whatsapp.com/send?phone=12991638739" class="botao">WhatsApp</a>
             </div>
         </div>
     </div>
@@ -21,15 +21,8 @@ require_once 'head.php';
         <div class="col-md-8 offset-md-2">
             <h2 class="text-center">Curiosidades</h2>
             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                <!-- Indicadores -->
-                <ol class="carousel-indicators">
-                    <li data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></li>
-                    <li data-bs-target="#carouselExample" data-bs-slide-to="1"></li>
-                    <li data-bs-target="#carouselExample" data-bs-slide-to="2"></li>
-                </ol>
-
-                <!-- Slides -->
-                <div class="carousel-inner">
+                <!-- Centralize o carousel -->
+                <div class="carousel-inner text-center">
                     <div class="carousel-item active">
                         <p>Existem mais de 30 milhões de cães de rua hoje.</p>
                     </div>
@@ -54,5 +47,3 @@ require_once 'head.php';
         </div>
     </div>
 </div>
-
-

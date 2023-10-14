@@ -21,7 +21,7 @@
         <div class="header-buttons">
             <div class="header-button"><a href="index.php">HOME</a></div>
             <div class="header-button"><a href="sobre.php">SOBRE-NÓS</a></div>
-            <div class="header-button"><a href="#">CONTATO</a></div>
+            <div class="header-button"><a href="contato.php">CONTATO</a></div>
             <div class="header-button"><a href="login.php">CONECTE-SE</a></div>
         </div>
     </header>
