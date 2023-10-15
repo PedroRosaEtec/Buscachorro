@@ -21,15 +21,8 @@ require_once 'head.php';
         <div class="col-md-8 offset-md-2">
             <h2 class="text-center">Curiosidades</h2>
             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                <!-- Indicadores -->
-                <ol class="carousel-indicators">
-                    <li data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></li>
-                    <li data-bs-target="#carouselExample" data-bs-slide-to="1"></li>
-                    <li data-bs-target="#carouselExample" data-bs-slide-to="2"></li>
-                </ol>
-
-                <!-- Slides -->
-                <div class="carousel-inner">
+                <!-- Centralize o carousel -->
+                <div class="carousel-inner text-center">
                     <div class="carousel-item active">
                         <p>Existem mais de 30 milhões de cães de rua hoje.</p>
                     </div>
