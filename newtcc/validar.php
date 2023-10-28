@@ -75,7 +75,7 @@ function CadastrarUsuario($nome, $telefone, $email, $senha)
     ct_usuario = "' . $telefone . '",
     nm_email = "' . $email . '",
     nm_senha = md5("' . $senha . '"),
-    cd_tipo_usuario = "1",
+    cd_tipo_usuario = "2",
     cd_status_usuario = "1";
     ';
 
@@ -115,7 +115,7 @@ function ValidarLogin($email, $senha)
                 $_SESSION['id'] = $exibe['cd_usuario'];
                 $_SESSION['user'] = $exibe['nm_nome'];
                 $_SESSION['tipo'] = $exibe['cd_tipo_usuario'];
-                Confirma("Bem vindo", "index.php");
+                Confirma("Bem vindo", "painel-cliente/index.php");
             } else
                 Erro("Login não realizado!");
 
@@ -123,4 +123,55 @@ function ValidarLogin($email, $senha)
         Erro("Ops... Parece que há algum erro! Tente novamente.");
     }
 }
+
+function CadastrarAnimal($nome_animal ,$usuario, $pagina,  $imagem, $raca, $sexo, $descricao, $pontoref, $porte, $cor){
+    $sql = '
+    insert into tb_animal set
+    nm_animal = "'.$nome_animal.'",
+    sexo_animal = "'.$sexo.'",
+    nm_ponto_referencia = "'.$pontoref.'",
+    descricao = "'.$descricao.'",
+    nm_porte = "'.$porte.'",
+    st_animal = 1,
+    id_cor = "'.$cor.'",
+    id_raca = "'.$raca.'",
+    id_usuario = "'.$usuario.'"
+    ;
+    ';
+    
+    $res =$GLOBALS['con']->query($sql);
+    
+    if($res){
+        $sql = '
+        select cd_animal from tb_animal 
+        where nm_animal = "'.$nome_animal.'" and 
+        id_usuario = "'.$usuario.'";    ';
+    
+        $busca = $GLOBALS['con']->query($sql);
+    
+        if($busca->num_rows > 0){
+            $exibe = $busca->fetch_array();
+            EnviarFoto($imagem, $exibe['cd_animal'], $pagina);
+    }
+    else{
+        Erro( "Animal nao encontrado!");
+    }
+    }
+    }
+    
+     function EnviarFoto($imagem, $cd_animal, $pagina){
+        $sql ='
+        insert into tb_foto set
+        url_imagem = "'.$imagem.'",
+        id_animal = "'.$cd_animal.'";
+        ';
+    
+        $res = $GLOBALS['con']->query($sql);
+        Confirma("Imagem Enviada com sucesso!", "index.php");
+        if($res){
+            
+        }else{
+            Erro("Imagem não enviada!");
+        }
+     };
 ?>
