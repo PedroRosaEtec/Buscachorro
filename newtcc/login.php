@@ -49,7 +49,7 @@ require_once "validar.php";
                     <input type="text" name="nome" placeholder="Seu nome"  class="form-group" required>
                         <br>
 
-                        <input type="text" name="sobrenome" placeholder="Seu sobrenome"  class="form-group" required>
+                        <input type="text" name="telefone" placeholder="Seu telefone"  class="form-group" required>
                         <br>
 
                         <input type="email" name="email" placeholder="Seu email"  class="form-group" required>
@@ -80,7 +80,7 @@ require_once "validar.php";
             if($_POST['senha'] == $_POST['senha2']){
                 CadastrarUsuario(
                     $_POST['nome'],
-                    $_POST['sobrenome'],
+                    $_POST['telefone'],
                     $_POST['email'],
                     $_POST['senha']
                 );

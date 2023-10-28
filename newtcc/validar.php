@@ -1,7 +1,8 @@
 <?php
 
 require_once 'header.php';
-function Confirma($msg, $pagina){
+function Confirma($msg, $pagina)
+{
     print '
             <div class="modal fade" id="myModal" data-backdrop="static">
             <div class="modal-dialog modal-md">
@@ -12,7 +13,7 @@ function Confirma($msg, $pagina){
                         </div>
 
                         <div class="modal-body text-center">
-                            '.$msg.'
+                            ' . $msg . '
                         </div>
 
                         <div class="modal-footer">
@@ -26,14 +27,15 @@ function Confirma($msg, $pagina){
 
         <script>
             function redireciona(){
-                location.href = "'.$pagina.'";
+                location.href = "' . $pagina . '";
             }
         </script>
     ';
 }
 
 
-function Erro ($msg){
+function Erro($msg)
+{
     print '
     <div class="modal fade" id="myModal" data-backdrop="static">
     <div class="modal-dialog modal-md">
@@ -44,7 +46,7 @@ function Erro ($msg){
                 </div>
 
                 <div class="modal-body text-center">
-                    '.$msg.'
+                    ' . $msg . '
                 </div>
 
                 <div class="modal-footer">
@@ -65,59 +67,60 @@ function Erro ($msg){
 }
 
 
-function CadastrarUsuario( $nome, $sobrenome , $email, $senha){
+function CadastrarUsuario($nome, $telefone, $email, $senha)
+{
     $sql = '
     insert into tb_usuario set
-    nm_usuario = "'.$nome.'",
-    nm_sobrenome = "'.$sobrenome.'",
-    nm_email = "'.$email.'",
-    cd_senha = md5("'.$senha.'")
+    nm_nome = "' . $nome . '" ,
+    ct_usuario = "' . $telefone . '",
+    nm_email = "' . $email . '",
+    nm_senha = md5("' . $senha . '"),
+    cd_tipo_usuario = "1",
+    cd_status_usuario = "1";
     ';
 
     $res = $GLOBALS['con']->query($sql);
-    if($res){
+    if ($res) {
         Confirma("Cadastrado com sucesso!", "login.php");
-        }
-        else
-        {
-            Erro("Há algum erro ai!:");
-        }
+    } else {
+        Erro("Há algum erro ai!:");
+    }
 }
 
 
-function ValidarLogin($email, $senha){
+function ValidarLogin($email, $senha)
+{
     $sql = '
-    select cd_usuario, 
-    nm_usuario,
-    id_tipo_usuario from
-    tb_usuario
-    where
-    nm_email = "'.$email.'" and
-    cd_senha = md5("'.$senha.'") and
-    st_usuario = "1";
+    select cd_usuario, cd_tipo_usuario from tb_usuario 
+    where 
+    nm_email = "' . $email . '" and
+    nm_senha = md5("' . $senha . '") and 
+    cd_status_usuario = "1";
     ';
 
 
     $res = $GLOBALS['con']->query($sql);
 
-    if($res->num_rows == 1){
+    if ($res->num_rows == 1) {
         $exibe = $res->fetch_array();
         session_start();
-        if($exibe['id_tipo_usuario'] == 1){
+        if ($exibe['cd_tipo_usuario'] == 1) {
             $_SESSION['id'] = $exibe['cd_usuario'];
-            $_SESSION['user'] = $exibe['nm_usuario'];
-            $_SESSION['tipo'] = $exibe['id_tipo_usuario'];
+            $_SESSION['user'] = $exibe['nm_nome'];
+            $_SESSION['tipo'] = $exibe['cd_tipo_usuario'];
             Confirma("Bem vindo", "painel/index.php");
-    }else
+        } else
 
-    if($exibe['id_tipo_usuario'] == 2){
-        $_SESSION['id'] = $exibe['cd_usuario'];
-        $_SESSION['user'] = $exibe['nm_usuario'];
-        $_SESSION['tipo'] = $exibe['id_tipo_usuario'];
-        Confirma("Bem vindo", "index.php");
-    }else
-        Erro("Login não realizado!");
-    
+            if ($exibe['cd_tipo_usuario'] == 2) {
+                $_SESSION['id'] = $exibe['cd_usuario'];
+                $_SESSION['user'] = $exibe['nm_nome'];
+                $_SESSION['tipo'] = $exibe['cd_tipo_usuario'];
+                Confirma("Bem vindo", "index.php");
+            } else
+                Erro("Login não realizado!");
+
+    } else {
+        Erro("Ops... Parece que há algum erro! Tente novamente.");
     }
 }
 ?>
