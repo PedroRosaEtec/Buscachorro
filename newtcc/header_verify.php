@@ -1,14 +1,13 @@
 <?php
-
-session_start();
-if(!empty($_SESSION['id'])){
-    $_SESSION['id'];
-    $_SESSION['user'];
-    $_SESSION['tipo'];
-    // Você pode usar $id, $user e $tipo a partir deste ponto
-} else {
-    header("Location: /logoff.php");
-}
+// verificar depois!
+// session_start();
+// if(!empty($_SESSION['id'])){
+//     $_SESSION['id'];
+//     $_SESSION['user'];
+//     $_SESSION['tipo'];
+// } else {
+//     header("Location: /logoff.php");
+// }
 
 
 require_once("conect.php");

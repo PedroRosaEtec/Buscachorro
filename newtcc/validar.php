@@ -102,20 +102,21 @@ function ValidarLogin($email, $senha)
     $res = $GLOBALS['con']->query($sql);
 
     if ($res->num_rows == 1) {
+
         $exibe = $res->fetch_array();
         session_start();
-        if ($exibe['cd_tipo_usuario'] == 1) {
+        if ($exibe['cd_tipo_usuario'] == "1") {
             $_SESSION['id'] = $exibe['cd_usuario'];
             $_SESSION['user'] = $exibe['nm_nome'];
             $_SESSION['tipo'] = $exibe['cd_tipo_usuario'];
             Confirma("Bem vindo", "painel/index.php");
         } else
 
-            if ($exibe['cd_tipo_usuario'] == 2) {
+            if ($exibe['cd_tipo_usuario'] == "2") {
                 $_SESSION['id'] = $exibe['cd_usuario'];
                 $_SESSION['user'] = $exibe['nm_nome'];
                 $_SESSION['tipo'] = $exibe['cd_tipo_usuario'];
-                Confirma("Bem vindo", "painel-cliente/index.php");
+                Confirma("Bem vindo", "/painel-cliente/index.php");
             } else
                 Erro("Login não realizado!");
 
