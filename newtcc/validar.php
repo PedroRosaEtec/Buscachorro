@@ -1,6 +1,4 @@
 <?php
-
-require_once 'header.php';
 function Confirma($msg, $pagina)
 {
     print '
@@ -116,7 +114,7 @@ function ValidarLogin($email, $senha)
                 $_SESSION['id'] = $exibe['cd_usuario'];
                 $_SESSION['user'] = $exibe['nm_nome'];
                 $_SESSION['tipo'] = $exibe['cd_tipo_usuario'];
-                Confirma("Bem vindo", "/painel-cliente/index.php");
+                Confirma("Bem vindo", "painel-cliente/index.php");
             } else
                 Erro("Login não realizado!");
 

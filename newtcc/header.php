@@ -1,6 +1,16 @@
 <?php
 
-require_once("conect.php");
+session_start();
+if(!empty($_SESSION['id'])){
+    echo $_SESSION['id'];
+    echo $_SESSION['user'];
+    echo $_SESSION['tipo'];
+    echo "Você fez login como cliente!";
+} 
+else{
+    echo "Você não fez login!";
+}
+require_once 'conect.php';
 
 ?>
 
