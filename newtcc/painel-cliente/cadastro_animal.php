@@ -101,7 +101,7 @@ if (!empty($_POST)) {
 
         // Verificar se a extensão é válida
         if ($extensao == "png" || $extensao == "jpg" || $extensao == "jpeg" || $extensao == "jfif" || $extensao == "webp") {
-            $uploaddir = "/img_animais/";
+            $uploaddir = "img_animais/";
 
             // Definir a extensão correta para a imagem
             if ($extensao == "jpeg" || $extensao == "jfif" || $extensao == "webp") {
