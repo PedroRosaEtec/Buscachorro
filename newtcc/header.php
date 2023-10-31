@@ -2,13 +2,12 @@
 
 session_start();
 if(!empty($_SESSION['id'])){
-    echo $_SESSION['id'];
-    echo $_SESSION['user'];
-    echo $_SESSION['tipo'];
-    echo "Você fez login como cliente!";
+     $_SESSION['id'];
+     $_SESSION['user'];
+     $_SESSION['tipo'];
 } 
 else{
-    echo "Você não fez login!";
+    echo "Você não está logado!";
 }
 require_once 'conect.php';
 
