@@ -1,9 +1,9 @@
 <?php
 require_once "header.php";
 require_once "validar.php";
+require_once "navigation.php";
 
 ?>
-
 <div class="container">
     <div class="row">
         <div class="col-sm-4 offset-sm-4">

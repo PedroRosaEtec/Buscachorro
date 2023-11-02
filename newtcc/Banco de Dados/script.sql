@@ -204,135 +204,181 @@ nm_cor = "Merle";
 insert into tb_cor set
 nm_cor = "Prateado";
 
-/*  Insert Tabela Usuario*/
+-- INSERT DE USUARIOS ADMINISTRADORES!
 
 insert into tb_usuario set
-nm_nome = "Vinicius",
-nm_email = "vinicius@mail.com",
+nm_nome = "Nicolas",
+nm_email = "nicj@adm.com",
 nm_senha = md5("123"),
-ct_usuario = "(12)98765-9898",
-cd_tipo_usuario = 1;
+ct_usuario = "123",
+cd_tipo_usuario = 1,
+cd_status_usuario = 1;
 
 insert into tb_usuario set
 nm_nome = "Pedro",
-nm_email = "pedro@mail.com",
+nm_email = "pedroh@adm.com",
 nm_senha = md5("123"),
-ct_usuario = "(12)98735-9898",
-cd_tipo_usuario = 1;
+ct_usuario = "123",
+cd_tipo_usuario = 1,
+cd_status_usuario = 1;
+
+insert into tb_usuario set
+nm_nome = "Gustavo",
+nm_email = "gusg@adm.com",
+nm_senha = md5("123"),
+ct_usuario = "123",
+cd_tipo_usuario = 1,
+cd_status_usuario = 1;
 
 insert into tb_usuario set
 nm_nome = "Victor",
-nm_email = "victor@mail.com",
+nm_email = "vica@adm.com",
 nm_senha = md5("123"),
-ct_usuario = "(12)98732-9898",
-cd_tipo_usuario = 1;
+ct_usuario = "123",
+cd_tipo_usuario = 1,
+cd_status_usuario = 1;
 
 insert into tb_usuario set
-nm_nome = "Rafael",
-nm_email = "rafael@mail.com",
+nm_nome = "Vinicius",
+nm_email = "vinif@adm.com",
 nm_senha = md5("123"),
-ct_usuario = "(12)98235-9898",
-cd_tipo_usuario = 1;
+ct_usuario = "123",
+cd_tipo_usuario = 1,
+cd_status_usuario = 1;
 
-insert into tb_usuario set
-nm_nome = "Luiz",
-nm_email = "luiz@mail.com",
-nm_senha = md5("123"),
-ct_usuario = "(12)18735-9898",
-cd_tipo_usuario = 1;
+/*  Insert Tabela Usuario*
 
-/*  Insert Tabela Animal*/
+Exemplos de INSERTS NÃO NECESSÁRIOS!
 
-insert into tb_animal set 
-nm_animal = "Cristal",
-sexo_animal = "Feminino",
-nm_ponto_referencia = "Etec Ilza Nascimento Pintus",
-descricao = "Perto da portaria da etec. Em frente à preça",
-nm_porte = "Médio",
-st_animal = "1",
-id_usuario = "1",
-id_cor = "2",
-id_raca = "15";
+/
 
-insert into tb_animal set 
-nm_animal = "Caleb",
-sexo_animal = "Masculino",
-nm_ponto_referencia = "carrefour",
-descricao = "Proximo ao carrefour da etec. Em frente à preça",
-nm_porte = "Grande",
-st_animal = "1",
-id_usuario = "2",
-id_cor = "4",
-id_raca = "12";
+-- insert into tb_usuario set
+-- nm_nome = "Vinicius",
+-- nm_email = "vinicius@mail.com",
+-- nm_senha = md5("123"),
+-- ct_usuario = "(12)98765-9898",
+-- cd_tipo_usuario = 1;
 
-insert into tb_animal set 
-nm_animal = "Roger",
-sexo_animal = "Masculino",
-nm_ponto_referencia = "Golden",
-descricao = "Em frente ao golden",
-nm_porte = "Pequeno",
-st_animal = "1",
-id_usuario = "3",
-id_cor = "5",
-id_raca = "3";
+-- insert into tb_usuario set
+-- nm_nome = "Pedro",
+-- nm_email = "pedro@mail.com",
+-- nm_senha = md5("123"),
+-- ct_usuario = "(12)98735-9898",
+-- cd_tipo_usuario = 1;
 
-insert into tb_animal set 
-nm_animal = "Nunes",
-sexo_animal = "Masculino",
-nm_ponto_referencia = "Golden",
-descricao = "Atrás do golden",
-nm_porte = "Grande",
-st_animal = "1",
-id_usuario = "4",
-id_cor = "8",
-id_raca = "1";
+-- insert into tb_usuario set
+-- nm_nome = "Victor",
+-- nm_email = "victor@mail.com",
+-- nm_senha = md5("123"),
+-- ct_usuario = "(12)98732-9898",
+-- cd_tipo_usuario = 1;
 
-insert into tb_animal set 
-nm_animal = "Magalhaes",
-sexo_animal = "Masculino",
-nm_ponto_referencia = "Subway",
-descricao = "Em frente ao subway",
-nm_porte = "Médio",
-st_animal = "1",
-id_usuario = "5",
-id_cor = "10",
-id_raca = "1";
+-- insert into tb_usuario set
+-- nm_nome = "Rafael",
+-- nm_email = "rafael@mail.com",
+-- nm_senha = md5("123"),
+-- ct_usuario = "(12)98235-9898",
+-- cd_tipo_usuario = 1;
+
+-- insert into tb_usuario set
+-- nm_nome = "Luiz",
+-- nm_email = "luiz@mail.com",
+-- nm_senha = md5("123"),
+-- ct_usuario = "(12)18735-9898",
+-- cd_tipo_usuario = 1;
+
+-- /*  Insert Tabela Animal*/
+
+-- insert into tb_animal set 
+-- nm_animal = "Cristal",
+-- sexo_animal = "Feminino",
+-- nm_ponto_referencia = "Etec Ilza Nascimento Pintus",
+-- descricao = "Perto da portaria da etec. Em frente à preça",
+-- nm_porte = "Médio",
+-- st_animal = "1",
+-- id_usuario = "1",
+-- id_cor = "2",
+-- id_raca = "15";
+
+-- insert into tb_animal set 
+-- nm_animal = "Caleb",
+-- sexo_animal = "Masculino",
+-- nm_ponto_referencia = "carrefour",
+-- descricao = "Proximo ao carrefour da etec. Em frente à preça",
+-- nm_porte = "Grande",
+-- st_animal = "1",
+-- id_usuario = "2",
+-- id_cor = "4",
+-- id_raca = "12";
+
+-- insert into tb_animal set 
+-- nm_animal = "Roger",
+-- sexo_animal = "Masculino",
+-- nm_ponto_referencia = "Golden",
+-- descricao = "Em frente ao golden",
+-- nm_porte = "Pequeno",
+-- st_animal = "1",
+-- id_usuario = "3",
+-- id_cor = "5",
+-- id_raca = "3";
+
+-- insert into tb_animal set 
+-- nm_animal = "Nunes",
+-- sexo_animal = "Masculino",
+-- nm_ponto_referencia = "Golden",
+-- descricao = "Atrás do golden",
+-- nm_porte = "Grande",
+-- st_animal = "1",
+-- id_usuario = "4",
+-- id_cor = "8",
+-- id_raca = "1";
+
+-- insert into tb_animal set 
+-- nm_animal = "Magalhaes",
+-- sexo_animal = "Masculino",
+-- nm_ponto_referencia = "Subway",
+-- descricao = "Em frente ao subway",
+-- nm_porte = "Médio",
+-- st_animal = "1",
+-- id_usuario = "5",
+-- id_cor = "10",
+-- id_raca = "1";
 
 /*  Consulta nome do Animal*/
 
-select nm_animal
-from
- tb_animal
-where 
-id_cor  = 2
-;
+-- select nm_animal
+-- from
+--  tb_animal
+-- where 
+-- id_cor  = 2
+-- ;
 
-select nm_animal
-from
- tb_animal
-where 
-id_cor  = 4
-;
+-- select nm_animal
+-- from
+--  tb_animal
+-- where 
+-- id_cor  = 4
+-- ;
 
 /*  Consulta portes animal*/
 
-select 
-nm_porte,
-nm_animal
-from
-tb_animal;
+-- select 
+-- nm_porte,
+-- nm_animal
+-- from
+-- tb_animal;
 
 /*  Consulta nome usuario, nome animal, porte do animal e cor do animal*/
 
-select tb_usuario.nm_nome as "Nome do Usuário",
- tb_animal.nm_animal as "Nome do Animal",
- nm_porte as "Porte do Animal",
- tb_cor.nm_cor as "Cor do Animal"
-from tb_animal
-inner join tb_usuario on tb_animal.id_usuario = tb_usuario.cd_usuario
-inner join tb_cor on tb_animal.id_cor = tb_cor.cd_cor;
+-- select tb_usuario.nm_nome as "Nome do Usuário",
+--  tb_animal.nm_animal as "Nome do Animal",
+--  nm_porte as "Porte do Animal",
+--  tb_cor.nm_cor as "Cor do Animal"
+-- from tb_animal
+-- inner join tb_usuario on tb_animal.id_usuario = tb_usuario.cd_usuario
+-- inner join tb_cor on tb_animal.id_cor = tb_cor.cd_cor;
 
-select * from tb_usuario;
-select * from tb_animal;
-select * from tb_cor;
-show tables;
+-- select * from tb_usuario;
+-- select * from tb_animal;
+-- select * from tb_cor;
+-- show tables;

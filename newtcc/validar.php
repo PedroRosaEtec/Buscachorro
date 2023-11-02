@@ -107,7 +107,7 @@ function ValidarLogin($email, $senha)
             $_SESSION['id'] = $exibe['cd_usuario'];
             $_SESSION['user'] = $exibe['nm_nome'];
             $_SESSION['tipo'] = $exibe['cd_tipo_usuario'];
-            Confirma("Bem vindo", "painel/index.php");
+            Confirma("Bem vindo", "painel-adm/index.php");
         } else
 
             if ($exibe['cd_tipo_usuario'] == "2") {
@@ -166,7 +166,7 @@ function CadastrarAnimal($nome_animal ,$usuario, $pagina,  $imagem, $raca, $sexo
         ';
     
         $res = $GLOBALS['con']->query($sql);
-        Confirma("Imagem Enviada com sucesso!", "../index.php");
+        Confirma("Imagem Enviada com sucesso!", "index.php");
         if($res){
             
         }else{
