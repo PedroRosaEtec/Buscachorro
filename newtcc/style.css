@@ -3,5 +3,15 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
   }
-  
+  .centered-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Isso centraliza verticalmente na tela */
+}
 
+.card {
+    max-width: 500px; /* Define a largura máxima do card */
+    width: 100%; /* Para garantir que o card seja responsivo */
+    text-align: center; /* Centraliza o texto */
+}
