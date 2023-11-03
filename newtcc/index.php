@@ -3,6 +3,8 @@ require_once "header.php";
 require_once "navigation.php";
 ?>
 
+<link rel="stylesheet" type="text/css" href="style.css">
+
 <body>
     <div class="container">
         <div class="row">
@@ -41,6 +43,5 @@ require_once "navigation.php";
             ?>
         </div>
     </div>
-
 
 </body>

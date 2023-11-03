@@ -8,10 +8,10 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto"> <!-- Adicione ml-auto aqui -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Sobre-nós</a>
+        <a class="nav-link" href="sobre.php">Sobre-nós</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Contatos</a>
+        <a class="nav-link" href="contatos.php">Contatos</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="login.php">Conectar</a>
