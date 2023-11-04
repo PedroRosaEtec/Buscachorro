@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto"> <!-- Adicione ml-auto aqui -->
     <li class="nav-item active">
-        <a class="nav-link" href="cadastro_animal.php">Lista de Usuarios</a>
+        <a class="nav-link" href="geren_usuarios.php">Lista de Usuarios</a>
       </li>
 
       <li class="nav-item active">

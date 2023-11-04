@@ -6,15 +6,15 @@ require_once 'header.php';
     
     <div class="container">
         <h1 class="display-6 mb-4">Listar Animais</h1>
-        <table id="listar-animais" class="table table-striped table-hover display" style="width:100%">
+        <table id="listar-usuario" class="table table-striped table-hover display" style="width:100%">
             <thead class="thead-dark">
                 <tr>
                     <th>Id</th>
                     <th>Nome</th>
-                    <th>Sexo</th>
-                    <th>Usuario</th>
-                    <th>Raça</th>
-                    <th>Cor</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Tipo de Usuário</th>
+                    <th>Status do Usuário</th>
 
                 </tr>
             </thead>
@@ -27,21 +27,21 @@ require_once 'header.php';
 
     <script>
     $(document).ready(function() {
-        $('#listar-animais').DataTable({
+        $('#listar-usuario').DataTable({
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/pt-BR.json"
             },
             "ajax": {
-                "url": "get_animais.php",
+                "url": "get_usuarios.php",
                 "dataSrc": "" 
             },
             "columns": [
-                { "data": "cd_animal" },
-                { "data": "nm_animal" },
-                { "data": "sexo_animal" },
+                { "data": "cd_usuario" },
                 { "data": "nm_nome" },
-                { "data": "nm_raca" },
-                { "data": "nm_cor" }
+                { "data": "nm_email" },
+                { "data": "ct_usuario" },
+                { "data": "cd_tipo_usuario" },
+                { "data": "cd_status_usuario" }
             ]
         });
     });
