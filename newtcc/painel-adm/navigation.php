@@ -8,14 +8,14 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto"> <!-- Adicione ml-auto aqui -->
     <li class="nav-item active">
-        <a class="nav-link" href="cadastro_animal.php">Lista de Usuarios</a>
+        <a class="nav-link" href="geren_usuarios.php">Lista de Usuarios</a>
       </li>
 
       <li class="nav-item active">
         <a class="nav-link" href="dados_legais.php">Dados Legais</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="cadastro_animal.php">Gerenciamento de Postagens</a>
+        <a class="nav-link" href="geren_post.php">Gerenciamento de Postagens</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="painel_controle.php">Configurações</a>
