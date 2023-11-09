@@ -28,18 +28,18 @@ require_once "navigation.php";
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Entre na sua conta</h5>
 
                   <div class="form-outline mb-4">
-                    <input type="email" name ="email" id="email" class="form-control form-control-lg" />
                     <label class="form-label" for="email">Email</label>
+                    <input type="email" name ="email" id="email" class="form-control form-control-lg" />
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="password" name="senha" id="senha" class="form-control form-control-lg" />
                     <label class="form-label" for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha" class="form-control form-control-lg" />
                   </div>
 
                   <div class="pt-1 mb-4">
                   <!-- <input type="submit" value="Entrar" name="action" class="btn btn-info btn-block"> -->
-                  <input type="submit" value="Entrar" class="btn btn-primary" name="action">
+                  <input type="submit" value="Entrar" class="btn btn-success btn-block" name="action">
                     <!-- <button class="btn btn-dark btn-lg btn-block" type="button" value="Entrar" name="action">Entrar</button> -->
                   </div>
 
