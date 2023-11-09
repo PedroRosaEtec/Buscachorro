@@ -19,7 +19,7 @@ require_once "navigation.php";
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-                <form>
+                <form method="post">
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
                     <span class="h1 fw-bold mb-0">Buscachorro</span>
@@ -38,8 +38,9 @@ require_once "navigation.php";
                   </div>
 
                   <div class="pt-1 mb-4">
-                  <input type="submit" value="Entrar" name="action" class="btn btn-info btn-block">
-                    <button class="btn btn-dark btn-lg btn-block" type="button" value="Entrar" name="action">Entrar</button>
+                  <!-- <input type="submit" value="Entrar" name="action" class="btn btn-info btn-block"> -->
+                  <input type="submit" value="Entrar" class="btn btn-primary" name="action">
+                    <!-- <button class="btn btn-dark btn-lg btn-block" type="button" value="Entrar" name="action">Entrar</button> -->
                   </div>
 
                   <a class="small text-muted" href="#!">Esqueceu sua senha?</a>

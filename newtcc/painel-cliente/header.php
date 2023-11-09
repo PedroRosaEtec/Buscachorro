@@ -28,7 +28,9 @@ require_once '../conect.php';
 
 <style>
 
-
+.altura{
+    height: 400px;
+}
 
 </style>
 
