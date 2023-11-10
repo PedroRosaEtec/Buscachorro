@@ -58,10 +58,13 @@ require_once "navigation.php";
                             <div class="modal-body">
                                 <!-- <label for="foto"></label> -->
 
-                                <img class="card-img-top" height="180" width="287"
+                                <img class="card-img-top" height="400" width="500"
                                     src="<?php echo 'painel-cliente/img_animais/' . $dados['url_imagem']; ?>"
                                     alt="Imagem do animal">
-                                <?php echo $dados['nm_animal']; ?>
+                                    <h3>
+                                        <label for="nome do animal">Nome do Animal:</label><br>
+                                        <?php echo $dados['nm_animal']; ?>
+                                    </h3>
 
                                 <p class="card-text">
                                 <?php echo $dados['descricao']; ?>
@@ -84,4 +87,13 @@ require_once "navigation.php";
         </div>
     </div>
 
+
 </body>
+
+
+</body>
+
+<?php
+require_once 'footer.php';
+?>
+
