@@ -7,27 +7,13 @@ require_once "navigation.php";
 
 <body>
 
-<div class="centered-card">
-        <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="./img/sobre.jpg" alt="Placeholder image" width="100%" height="auto">
-                </figure>
-            </div>
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                            <img src="./img/logo.png" alt="Placeholder image" width="48" height="48">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4">Buscachorro</p>
-                        <p class="subtitle is-6">Cada minuto conta quando um animal está desaparecido, e os riscos que eles enfrentam são significativos. Portanto, serviços como "Buscachorro" desempenham um papel crucial ao fornecer uma plataforma e recursos para ajudar os proprietários a reunir-se com seus animais de estimação perdidos.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="card" style= "width : 35rem; margin-left:30%">
+  <img class="card-img-top" src="./img/sobre.jpg" alt="Imagem de capa do card">
+  <div class="card-body">
+    <p class="card-text">Cada minuto conta quando um animal está desaparecido, e os riscos que eles enfrentam são significativos. Portanto, serviços como "Buscachorro" desempenham um papel crucial ao fornecer uma plataforma e recursos para ajudar os proprietários a reunir-se com seus animais de estimação perdidos.</p>
+  </div>
+</div>
 
 </body>
+
+

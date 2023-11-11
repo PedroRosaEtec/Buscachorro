@@ -10,22 +10,22 @@ require_once "navigation.php";
         <div class="row">
             <?php
             $sql = '
-        SELECT nm_animal, descricao, url_imagem
-        FROM tb_animal AS an
-        INNER JOIN tb_foto AS ft ON an.cd_animal = ft.id_animal;
-        ';
+            SELECT cd_animal, nm_animal, descricao, url_imagem
+            FROM tb_animal AS an
+            INNER JOIN tb_foto AS ft ON an.cd_animal = ft.id_animal;
+            ';
 
             $res = $GLOBALS['con']->query($sql);
-
             while ($dados = mysqli_fetch_assoc($res)) {
                 ?>
 
-                <div class="col-md-3 mb-3">
-                    <div class="card border-primary">
-                        <img class="card-img-top" src="<?php echo 'painel-cliente/img_animais/' . $dados['url_imagem']; ?>"
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="card h-100 d-flex flex-column">
+                        <img class="card-img-top" height="180" width="287"
+                            src="<?php echo 'painel-cliente/img_animais/' . $dados['url_imagem']; ?>"
                             alt="Imagem do animal">
 
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">
                                 <?php echo $dados['nm_animal']; ?>
                             </h5>
@@ -75,10 +75,11 @@ require_once "navigation.php";
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                             </div>
-                            <a href="#" class="btn btn-primary">Visitar</a>
                         </div>
                     </div>
                 </div>
+
+
 
 
                 <?php
@@ -88,7 +89,6 @@ require_once "navigation.php";
     </div>
 
 
-</body>
 
 
 </body>
@@ -96,4 +96,3 @@ require_once "navigation.php";
 <?php
 require_once 'footer.php';
 ?>
-
