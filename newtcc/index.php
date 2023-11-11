@@ -20,7 +20,7 @@ require_once "navigation.php";
                 ?>
 
                 <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="card h-100 d-flex flex-column">
+                    <div class="card h-100 d-flex flex-column shadow p-3 mb-5 bg-white rounded">
                         <img class="card-img-top" height="180" width="287"
                             src="<?php echo 'painel-cliente/img_animais/' . $dados['url_imagem']; ?>"
                             alt="Imagem do animal">
