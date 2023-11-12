@@ -14,7 +14,7 @@ require_once "navigation.php";
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="./img/teste.jpg" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem ; " />
+              <img src="./img/imglogin.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem ; " />
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
@@ -115,6 +115,12 @@ require_once "navigation.php";
 
                         <input type="password" name="senha2" placeholder="Confirme sua senha"  class="form-group" required>
                         <br>
+                        <input type="text" name="cidade" placeholder="Sua cidade"  class="form-group" required>
+                        <br>
+                        <input type="text" name="estado" placeholder="Seu estado"  class="form-group" required>
+                        <br>
+                        <input type="text" name="cep" placeholder="Seu CEP"  class="form-group" required>
+                        <br>
                     </div>
 
                     <div class="modal-footer">
@@ -138,7 +144,10 @@ require_once "navigation.php";
                     $_POST['nome'],
                     $_POST['telefone'],
                     $_POST['email'],
-                    $_POST['senha']
+                    $_POST['senha'],
+                    $_POST['cidade'],
+                    $_POST['estado'],
+                    $_POST['cep']
                 );
             }
             else{

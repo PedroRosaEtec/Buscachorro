@@ -34,11 +34,16 @@ create table tb_usuario(
 cd_usuario int primary key auto_increment not null,
 nm_nome varchar(140) not null,
 nm_email varchar(140) not null unique,
+nm_cidade VARCHAR(140),
+nm_estado varchar(20),
 nm_senha varchar(40) not null,
+nm_cep varchar(15) not null,
 ct_usuario varchar(20) not null,
 dt_registro DATETIME default current_timestamp,
 cd_tipo_usuario int not null,  -- Se 1 = ADM. Se 2 = Cliente
 cd_status_usuario char(1) not null
+
+
 );
 
 /*  Tabela Animal  */
