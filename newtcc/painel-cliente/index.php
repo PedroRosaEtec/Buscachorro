@@ -1,11 +1,13 @@
 <?php
 require_once("header.php");
 require_once("navigation.php");
-
 ?>
 
 <body>
     <div class="container">
+        <h2 class="text-center mt-4">Encontre seu animal!</h2>
+        <hr>
+
         <div class="row">
             <?php
             $sql = '
@@ -39,12 +41,7 @@ require_once("navigation.php");
                     </div>
                 </div>
 
-
-
-
                 <!-- Modal para visitar o animal -->
-
-
                 <div class="modal fade" id="visitar<?php echo $dados['cd_animal']; ?>">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -56,19 +53,15 @@ require_once("navigation.php");
                             </div>
                             <div class="modal-body">
                                 <!-- <label for="foto"></label> -->
-
-                                <img class="card-img-top" height="400" width="500" <img class="card-img-top"
+                                <img class="card-img-top" height="400" width="500"
                                     src="<?php echo 'img_animais/' . $dados['url_imagem']; ?>" alt="Imagem do animal">
                                 <h3>
                                     <label for="nome do animal">Nome do Animal:</label><br>
                                     <?php echo $dados['nm_animal']; ?>
                                 </h3>
-
                                 <p class="card-text">
                                     <?php echo $dados['descricao']; ?>
                                 </p>
-
-
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -77,18 +70,11 @@ require_once("navigation.php");
                     </div>
                 </div>
 
-
-
-
                 <?php
             }
             ?>
         </div>
     </div>
-
-
-
-
 </body>
 
 <?php

@@ -3,7 +3,7 @@ require_once("header.php");
 require_once("navigation.php");
 require_once("validar.php");
 
-if (!empty($_POST)) 
+if (!empty($_POST)) {
     if ($_POST['action'] == "Cadastrar") {
         if ($_POST['senha'] == $_POST['senha2']) {
             CadastrarUsuario(
@@ -13,23 +13,24 @@ if (!empty($_POST))
                 $_POST['senha'],
                 $_POST['cidade'],
                 $_POST['estado'],
-                $_POST['cep'],
+                $_POST['cep']
             );
         } else {
             Erro("Ops! As senhas digitadas não coincidem!");
         }
     } else if ($_POST['action'] == "Entrar") {
         ValidarLogin($_POST['email'], $_POST['senha']);
-    } else if ($_POST['action'] == "AlterarTelefone") {
+    } else if ($_POST['action'] == "Alterar Telefone") {
         AlterarTelefone($_SESSION['id'], $_POST['telefone']);
-    } else if ($_POST['action'] == "AlterarEmail") {
+    } else if ($_POST['action'] == "Alterar Email") {
         AlterarEmail($_SESSION['id'], $_POST['email']);
-    } else if ($_POST['action'] == "AlterarCidade") {
+    } else if ($_POST['action'] == "Alterar Cidade") {
         AlterarCidade($_SESSION['id'], $_POST['cidade']);
-    } else if ($_POST['action'] == "AlterarEstado") {
+    } else if ($_POST['action'] == "Alterar Estado") {
         AlterarEstado($_SESSION['id'], $_POST['estado']);
-    } else if ($_POST['action'] == "AlterarCep") {
+    } else if ($_POST['action'] == "Alterar Cep") {
         AlterarCep($_SESSION['id'], $_POST['cep']);
+    }
 }
 ?>
 
@@ -39,17 +40,16 @@ if (!empty($_POST))
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">
-                         <?php
-                    $dadosUsuario = ObterDadosUsuario($_SESSION['id']);
-                    if ($dadosUsuario) {
-                        echo '<h4 class="card-title">' . $dadosUsuario['nm_nome'] . '</h4>';
-                       
-                    } else {
-                        echo '<p class="card-text">Erro ao recuperar dados do usuário.</p>';
-                    }
-                    ?></h4>
+                        <?php
+                        $dadosUsuario = ObterDadosUsuario($_SESSION['id']);
+                        if ($dadosUsuario) {
+                            echo '<h4 class="card-title">' . $dadosUsuario['nm_nome'] . '</h4>';
+                        } else {
+                            echo '<p class="card-text">Erro ao recuperar dados do usuário.</p>';
+                        }
+                        ?>
+                    </h4>
                     <hr>
-                    
                     <p class="card-text">No Buscachorro desde 1990 </p>
                     <a href="#" class="btn btn-primary">Editar Perfil</a>
                 </div>
@@ -63,72 +63,69 @@ if (!empty($_POST))
                     <div class="container mt-5">
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <p class="card-text"><strong>Telefone: </strong>
-                            <?php
-                    $dadosUsuario = ObterDadosUsuario($_SESSION['id']);
-                    if ($dadosUsuario) {
-                        echo  $dadosUsuario['ct_usuario'] . '</p>';
-                       
-                    } else {
-                        echo '<p class="card-text">Erro ao recuperar dados do usuário.</p>';
-                    }
-                    ?>   
-                        </p>
+                                <?php
+                                $dadosUsuario = ObterDadosUsuario($_SESSION['id']);
+                                if ($dadosUsuario) {
+                                    echo  $dadosUsuario['ct_usuario'] ? $dadosUsuario['ct_usuario'] : 'N/A';
+                                } else {
+                                    echo '<p class="card-text">Erro ao recuperar dados do usuário.</p>';
+                                }
+                                ?>
+                            </p>
                             <a href="#" data-toggle="modal" data-target="#edittel" class="btn btn-link">Alterar</a>
                         </div>
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <p class="card-text"><strong>E-mail: </strong>
-                            <?php
-                    $dadosUsuario = ObterDadosUsuario($_SESSION['id']);
-                    if ($dadosUsuario) {
-                        echo  $dadosUsuario['nm_email'];
-                       
-                    } else {
-                        echo '<p class="card-text">Erro ao recuperar dados do usuário.</p>';
-                    }
-                    ?> 
-                        </p>
+                                <?php
+                                $dadosUsuario = ObterDadosUsuario($_SESSION['id']);
+                                if ($dadosUsuario) {
+                                    echo  $dadosUsuario['nm_email'] ? $dadosUsuario['nm_email'] : 'N/A';
+                                } else {
+                                    echo '<p class="card-text">Erro ao recuperar dados do usuário.</p>';
+                                }
+                                ?> 
+                            </p>
                             <a href="#" data-toggle="modal" data-target="#editemail" class="btn btn-link">Alterar</a>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="card-text"><strong>Endereço: </strong>
-                            <?php
-                           $dadosUsuario = ObterDadosUsuario($_SESSION['id']);
-                           if ($dadosUsuario) {
-                           echo $dadosUsuario['nm_cidade'];
-                           } else {
-                           echo '<p class="card-text">Erro ao recuperar dados do usuário.</p>';
-                           }
-                    ?>
-                       </p>
+                            <p class="card-text"><strong>Cidade: </strong>
+                                <?php
+                                $dadosUsuario = ObterDadosUsuario($_SESSION['id']);
+                                if ($dadosUsuario) {
+                                    echo $dadosUsuario['nm_cidade'] ? $dadosUsuario['nm_cidade'] : 'N/A';
+                                } else {
+                                    echo '<p class="card-text">Erro ao recuperar dados do usuário.</p>';
+                                }
+                                ?>
+                            </p>
                             <a href="#" data-toggle="modal" data-target="#editcidade" class="btn btn-link">Alterar</a>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
                             <p class="card-text"><strong>Estado: </strong>
-                            <?php
-                    $dadosUsuario = ObterDadosUsuario($_SESSION['id']);
-                    if ($dadosUsuario) {
-                        echo  $dadosUsuario['nm_estado'];
-                       } else {
-                        echo '<p class="card-text">Erro ao recuperar dados do usuário.</p>';
-                    }
-                    ?>   
-                        </p>
+                                <?php
+                                $dadosUsuario = ObterDadosUsuario($_SESSION['id']);
+                                if ($dadosUsuario) {
+                                    echo  $dadosUsuario['nm_estado'] ? $dadosUsuario['nm_estado'] : 'N/A';
+                                } else {
+                                    echo '<p class="card-text">Erro ao recuperar dados do usuário.</p>';
+                                }
+                                ?>   
+                            </p>
                             <a href="#" data-toggle="modal" data-target="#editestado" class="btn btn-link">Alterar</a>
                         </div>
                         <div class="d-flex justify-content-between align-items-center mb-2">
-    <p class="card-text"><strong>CEP: </strong>
-        <?php
-        $dadosUsuario = ObterDadosUsuario($_SESSION['id']);
-        if ($dadosUsuario) {
-            echo !empty($dadosUsuario['nm_cep']) ? $dadosUsuario['nm_cep'] : 'N/A';
-        } else {
-            echo '<p class="card-text">Erro ao recuperar dados do usuário.</p>';
-        }
-        ?>
-    </p>
-    <a href="#" data-toggle="modal" data-target="#editcep" class="btn btn-link">Alterar</a>
-</div>
-
+                            <p class="card-text"><strong>CEP: </strong>
+                                <?php
+                                $dadosUsuario = ObterDadosUsuario($_SESSION['id']);
+                                if ($dadosUsuario) {
+                                    echo !empty($dadosUsuario['nm_cep']) ? $dadosUsuario['nm_cep'] : 'N/A';
+                                } else {
+                                    echo '<p class="card-text">Erro ao recuperar dados do usuário.</p>';
+                                }
+                                ?>
+                            </p>
+                            <a href="#" data-toggle="modal" data-target="#editcep" class="btn btn-link">Alterar</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -152,7 +149,7 @@ if (!empty($_POST))
 
                 <div class="modal-footer">
                     <button class="btn btn-secundary" data-dismiss="modal">Fechar</button>
-                    <input type="submit" value="AlterarTelefone" class="btn btn-primary" name="action">
+                    <input type="submit" value="Alterar Telefone" class="btn btn-primary" name="action">
                 </div>
             </form>
         </div>
@@ -175,7 +172,7 @@ if (!empty($_POST))
 
                 <div class="modal-footer">
                     <button class="btn btn-secundary" data-dismiss="modal">Fechar</button>
-                    <input type="submit" value="AlterarEmail" class="btn btn-primary" name="action">
+                    <input type="submit" value="Alterar Email" class="btn btn-primary" name="action">
                 </div>
             </form>
         </div>
@@ -198,7 +195,7 @@ if (!empty($_POST))
 
                 <div class="modal-footer">
                     <button class="btn btn-secundary" data-dismiss="modal">Fechar</button>
-                    <input type="submit" value="AlterarCidade" class="btn btn-primary" name="action">
+                    <input type="submit" value="Alterar Cidade" class="btn btn-primary" name="action">
                 </div>
             </form>
         </div>
@@ -221,7 +218,7 @@ if (!empty($_POST))
 
                 <div class="modal-footer">
                     <button class="btn btn-secundary" data-dismiss="modal">Fechar</button>
-                    <input type="submit" value="AlterarEstado" class="btn btn-primary" name="action">
+                    <input type="submit" value="Alterar Estado" class="btn btn-primary" name="action">
                 </div>
             </form>
         </div>
