@@ -13,8 +13,8 @@ require_once("navigation.php");
             $sql = '
             SELECT cd_animal, nm_animal, descricao, url_imagem
             FROM tb_animal AS an
-            INNER JOIN tb_foto AS ft ON an.cd_animal = ft.id_animal;
-            ';
+            INNER JOIN tb_foto AS ft ON an.cd_animal = ft.id_animal
+            ORDER BY an.dt_registro DESC;';  // Adicione a cláusula ORDER BY aqui
 
             $res = $GLOBALS['con']->query($sql);
             while ($dados = mysqli_fetch_assoc($res)) {
