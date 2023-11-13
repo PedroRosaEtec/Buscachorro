@@ -14,47 +14,23 @@ $pagina = "cadastro_animal.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#333">   
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var highlightedAreas = {};
-
-            $('map area').click(function () {
-                toggleHighlight($(this));
-            });
-
-            function toggleHighlight(clickedArea) {
-                var areaAlt = clickedArea.attr('alt');
-                if (highlightedAreas[areaAlt]) {
-                    clickedArea.removeClass('highlighted');
-                    highlightedAreas[areaAlt] = false;
-                } else {
-                    clickedArea.addClass('highlighted');
-                    highlightedAreas[areaAlt] = true;
-                }
-            }
-        });
-    </script>
-
     <style>
-    .highlighted {
-        outline: 2px solid red; /* Adapte o estilo de destaque conforme necessário */
+    .destacada {
+        outline: 2px solid red; /* Altere a cor e a largura da borda conforme necessário */
     }
 </style>
 
-<style>
-        .highlighted {
-            outline: 2px solid red; /* ou qualquer estilo desejado */
-        }
-    </style>
+<script>
+    $(document).ready(function() {
+        // Adiciona o manipulador de evento click para as áreas do mapa
+        $('map[name="cachorrocadastro"] area').on('click', function(e) {
+            e.preventDefault(); // Impede que o link seja seguido
 
-    <script>
-        $(document).ready(function () {
-            $('map area').click(function () {
-                $(this).toggleClass('highlighted');
-            });
+            // Adiciona ou remove a classe 'destacada' na área clicada
+            $(this).toggleClass('destacada');
         });
-    </script>
-
+    });
+</script>
 
 </head>
 <body>
@@ -88,20 +64,7 @@ $pagina = "cadastro_animal.php";
     </section>
 </center>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Obtém todas as áreas no mapeamento
-        var areas = document.querySelectorAll('map area');
 
-        // Adiciona um ouvinte de evento de clique a cada área
-        areas.forEach(function (area) {
-            area.addEventListener('click', function () {
-                // Alternar a classe 'highlighted' ao clicar
-                this.classList.toggle('highlighted');
-            });
-        });
-    });
-</script>
 
 
 

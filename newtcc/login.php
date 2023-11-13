@@ -84,7 +84,7 @@ require_once "navigation.php";
 
                 <div class="card-footer text-center">
                     Ainda não é cadastrado ?
-                    <a href="#" data-toggle="modal" data-target="#cadastrar">Clique aqui!</a>
+                    <a href="#" data-toggle="modal" data-target="#cadastrar">Cliquew aqui!</a>
                 </div>
             </div>
         </div>
