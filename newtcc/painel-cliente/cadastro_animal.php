@@ -10,6 +10,8 @@ $pagina = "cadastro_animal.php";
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Cadastro de Cachorro</h1>
+        <a href="mapeamentomancha.php" class="btn btn-primary mb-3">Mapeamento da Mancha</a>
+        <form action="" method="post" enctype="multipart/form-data">
         <form action="" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nome_animal" class="form-label">Nome do animal</label>
