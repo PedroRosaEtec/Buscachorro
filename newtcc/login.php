@@ -41,12 +41,16 @@ require_once "navigation.php";
                   <!-- <input type="submit" value="Entrar" name="action" class="btn btn-info btn-block"> -->
                   <input type="submit" value="Entrar" class="btn btn-success btn-block" name="action">
                     <!-- <button class="btn btn-dark btn-lg btn-block" type="button" value="Entrar" name="action">Entrar</button> -->
-                  </div>
+                  </div>            
+                  
+                  <p class="mb-2 pb-lg-2" style="color: #393f81;">Esqueceu sua senha?
+                  <a href="#" data-toggle="modal" data-target="#meuModal" style="color: #393f81;">Clique aqui</a>
+                  </p>
 
-                  <a class="small text-muted" href="#!">Esqueceu sua senha?</a>
-                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Não tem uma conta? 
+                  <p class="mb-2 pb-lg-2" style="color: #393f81;">Não tem uma conta? 
                   <a href="#" data-toggle="modal" data-target="#cadastrar" style="color: #393f81;">Registre aqui</a>
                   </p>
+
                 </form>
 
               </div>
@@ -134,6 +138,40 @@ require_once "navigation.php";
     </div>
 </div>
 
+
+<!-- Modal para recuperar senha -->
+
+<div class="modal" id="meuModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Recuperar Senha</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      
+    <!-- Corpo do modal -->
+<div class="modal-body">
+  <p>Insira seu endereço de e-mail para gerar um token.</p>
+  <div class="form-group">
+    <input type="email" class="form-control" id="emailInput" placeholder="Seu endereço de e-mail">
+  </div>
+</div>
+
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" id="RecSenha">Gerar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-------------------------------------------------------------------->
 
 
 <?php
