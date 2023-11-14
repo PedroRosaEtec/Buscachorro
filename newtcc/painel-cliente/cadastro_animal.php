@@ -11,8 +11,8 @@ $pagina = "cadastro_animal.php";
     <div class="container mt-5">
         <h1 class="text-center">Cadastro de Cachorro</h1>
         <a href="mapeamentomancha.php" class="btn btn-primary mb-3">Mapeamento da Mancha</a>
-        <form action="" method="post" enctype="multipart/form-data">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form onsubmit="submitForm()" action="" method="post" enctype="multipart/form-data">
+        <form onsubmit="submitForm()" action="" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nome_animal" class="form-label">Nome do animal</label>
                 <input type="text" class="form-control" name="nome_animal" placeholder="Digite o nome do animal"
@@ -24,6 +24,10 @@ $pagina = "cadastro_animal.php";
                     <option value="1">Macho</option>
                     <option value="2">Fêmea</option>
                 </select>
+            </div>
+            <div class="mb-3">
+                <label for="addressInput" class="form-label">Endereço:</label>
+                <input type="text" id="addressInput" class="form-control" name="addressInput" placeholder="Digite o endereço" required>
             </div>
             <div class="mb-3">
                 <label for="ponto_ref" class="form-label">Ponto de referência</label>
@@ -92,6 +96,18 @@ $pagina = "cadastro_animal.php";
             <button type="submit" name="action" value="Cadastrar" class="btn btn-primary">Cadastrar</button>
         </form>
     </div>
+
+    <script>
+        function submitForm() {
+            var address = document.getElementById('addressInput').value;
+            // Armazena o endereço no sessionStorage para acessar no card do animal cadastrado
+            sessionStorage.setItem('userAddress', address);
+            // Redireciona para a página do mapa
+            window.location.href = 'map.html';
+        }
+    </script>
+
+
 </body>
 
 <?php

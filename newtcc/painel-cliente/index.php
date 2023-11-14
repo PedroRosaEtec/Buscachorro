@@ -130,6 +130,8 @@ require_once("navigation.php");
                                     <?php echo $dados['descricao']; ?>
                                 </p>
                             </div>
+                            <h6>Mapa da Localização</h6>
+                            <div id="map" style="width: 100%; height: 300px;"></div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                             </div>
@@ -210,7 +212,39 @@ require_once("navigation.php");
         });
     </script>
 
+<script>
+        // Recupera o endereço armazenado no sessionStorage
+        var address = sessionStorage.getItem('userAddress');
+
+        var map = L.map('map').setView([0, 0], 2);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Utiliza o endereço para obter as coordenadas e mostrar no mapa
+        fetch('https://nominatim.openstreetmap.org/search?format=json&q=' + address)
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    var lat = parseFloat(data[0].lat);
+                    var lon = parseFloat(data[0].lon);
+                    map.setView([lat, lon], 15);
+                    var customIcon = L.icon({
+                        iconUrl: 'https://cdn-icons-png.flaticon.com/512/5475/5475016.png',
+                        iconSize: [64, 64],
+                        iconAnchor: [32, 64]
+                    });
+
+                    L.marker([lat, lon], { icon: customIcon }).addTo(map);
+                } else {
+                    alert('Não foi possível encontrar a localização.');
+                }
+            });
+    </script>
+
     <?php
     require_once 'footer.php';
     ?>
+
 </body>
