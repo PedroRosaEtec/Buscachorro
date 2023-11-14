@@ -95,48 +95,49 @@ require_once "navigation.php";
     </div> -->
 
     <!-- Modal cadastrar usuario -->
-
     <div class="modal fade" id="cadastrar" data-backdrop="static">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <form method="post" class="form-group">
-                    <div class="modal-header text-center">
-                        Cadastre-se já!
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <form method="post" class="form-group">
+                <div class="modal-header bg-primary text-white text-center">
+                    <h5 class="modal-title">Cadastre-se já!</h5>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" name="nome" placeholder="Seu nome" class="form-control" required>
                     </div>
 
-                    <div class="modal-body text-center">
-                    <input type="text" name="nome" placeholder="Seu nome"  class="form-group" required>
-                        <br>
-
-                        <input type="text" name="telefone" placeholder="Seu telefone"  class="form-group" required>
-                        <br>
-
-                        <input type="email" name="email" placeholder="Seu email"  class="form-group" required>
-                        <br>
-
-                        <input type="password" name="senha" placeholder="Sua senha"  class="form-group" required>
-                        <br>
-
-                        <input type="password" name="senha2" placeholder="Confirme sua senha"  class="form-group" required>
-                        <br>
-                        <input type="text" name="cidade" placeholder="Sua cidade"  class="form-group" required>
-                        <br>
-                        <input type="text" name="estado" placeholder="Seu estado"  class="form-group" required>
-                        <br>
-                        <input type="text" name="cep" placeholder="Seu CEP"  class="form-group" required>
-                        <br>
+                    <div class="form-group">
+                        <input type="text" name="telefone" placeholder="Seu telefone" class="form-control" required>
                     </div>
 
-                    <div class="modal-footer">
-                        <button class="btn btn-secundary" data-dismiss="modal">Fechar</button>
-                        <input type="submit" value="Cadastrar" class="btn btn-primary" name="action">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Seu email" class="form-control" required>
                     </div>
-                </form>
-            </div>
+
+                    <div class="form-group">
+                        <input type="password" name="senha" placeholder="Sua senha" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="senha2" placeholder="Confirme sua senha" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" name="cep" placeholder="Seu CEP" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" name="action">
+                </div>
+            </form>
         </div>
-
     </div>
 </div>
+
 
 
 <!-- Modal para recuperar senha -->
