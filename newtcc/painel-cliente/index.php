@@ -5,6 +5,73 @@ require_once("navigation.php");
 
 <body>
     <div class="container">
+        
+        <div class="search-bar-container">
+            <input type="text" class="form-control search-input" id="searchInput" placeholder="Pesquisar por nome...">
+            <div class="filter-dropdown" id="filterDropdown">
+             
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <div class="w-48">
+                            <label for="sexo" class="form-label">Sexo</label>
+                            <select class="form-select" name="sexo" required>
+                                <option value="1">Macho</option>
+                                <option value="2">Fêmea</option>
+                            </select>
+                        </div>
+                        <div class="w-48">
+                            <label for="cor" class="form-label">Cor do animal</label>
+                            <select class="form-select" name="cor">
+                                <option value="0">Selecione uma cor</option>
+                                <?php
+                                
+                                $sql = 'SELECT * FROM tb_cor ORDER BY nm_cor ASC;';
+                                $res = $GLOBALS['con']->query($sql);
+
+                               
+                                while ($row = mysqli_fetch_assoc($res)) {
+                                    $cd_cor = $row['cd_cor'];
+                                    $nm_cor = $row['nm_cor'];
+                                    echo '<option value="' . $cd_cor . '">' . $nm_cor . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <div class="w-48">
+                            <label for="porte" class="form-label">Porte do animal</label>
+                            <select class="form-select" name="porte" required>
+                                <option value="1">Pequeno</option>
+                                <option value="2">Médio</option>
+                                <option value="3">Grande</option>
+                            </select>
+                        </div>
+                        <div class="w-48">
+                            <label for="raca" class="form-label">Raça</label>
+                            <select class="form-select" name="raca">
+                                <option value="0">Selecione uma raça</option>
+                                <?php
+                               
+                                $sql = 'SELECT * FROM tb_raca ORDER BY nm_raca ASC;';
+                                $res = $GLOBALS['con']->query($sql);
+
+                                
+                                while ($row = mysqli_fetch_assoc($res)) {
+                                    $cd_raca = $row['cd_raca'];
+                                    $nm_raca = $row['nm_raca'];
+                                    echo '<option value="' . $cd_raca . '">' . $nm_raca . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <h2 class="text-center mt-4">Encontre seu animal!</h2>
         <hr>
 
@@ -14,7 +81,7 @@ require_once("navigation.php");
             SELECT cd_animal, nm_animal, descricao, url_imagem
             FROM tb_animal AS an
             INNER JOIN tb_foto AS ft ON an.cd_animal = ft.id_animal
-            ORDER BY an.dt_registro DESC;';  // Adicione a cláusula ORDER BY aqui
+            ORDER BY an.dt_registro DESC;'; 
 
             $res = $GLOBALS['con']->query($sql);
             while ($dados = mysqli_fetch_assoc($res)) {
@@ -41,7 +108,7 @@ require_once("navigation.php");
                     </div>
                 </div>
 
-                <!-- Modal para visitar o animal -->
+                
                 <div class="modal fade" id="visitar<?php echo $dados['cd_animal']; ?>">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -52,7 +119,7 @@ require_once("navigation.php");
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
-                                <!-- <label for="foto"></label> -->
+                               
                                 <img class="card-img-top" height="400" width="500"
                                     src="<?php echo 'img_animais/' . $dados['url_imagem']; ?>" alt="Imagem do animal">
                                 <h3>
@@ -75,8 +142,75 @@ require_once("navigation.php");
             ?>
         </div>
     </div>
-</body>
 
-<?php
-require_once 'footer.php';
-?>
+    <style>
+       
+        .search-bar-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-input {
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .filter-dropdown {
+            position: absolute;
+            top: calc(100% + 10px); 
+            left: 0;
+            width: 100%;
+            background-color: #f0f0f0; 
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+        }
+
+        
+        .filter-dropdown label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .filter-dropdown select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        
+        .filter-dropdown .d-flex {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .filter-dropdown .w-48 {
+            width: 48%;
+        }
+    </style>
+
+    <script>
+       
+        document.addEventListener('DOMContentLoaded', function () {
+            var searchInput = document.getElementById('searchInput');
+            var filterDropdown = document.getElementById('filterDropdown');
+
+            searchInput.addEventListener('focus', function () {
+                filterDropdown.style.display = 'block';
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!searchInput.contains(event.target) && !filterDropdown.contains(event.target)) {
+                    filterDropdown.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <?php
+    require_once 'footer.php';
+    ?>
+</body>

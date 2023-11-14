@@ -15,22 +15,18 @@ $pagina = "cadastro_animal.php";
     <meta name="theme-color" content="#333">   
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
-    .destacada {
-        outline: 2px solid red; /* Altere a cor e a largura da borda conforme necessário */
-    }
-</style>
+        .highlighted {
+            outline: 2px solid red; /* Altere a cor e a largura da borda conforme necessário */
+        }
+    </style>
 
-<script>
-    $(document).ready(function() {
-        // Adiciona o manipulador de evento click para as áreas do mapa
-        $('map[name="cachorrocadastro"] area').on('click', function(e) {
-            e.preventDefault(); // Impede que o link seja seguido
-
-            // Adiciona ou remove a classe 'destacada' na área clicada
-            $(this).toggleClass('destacada');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            $('map area').click(function () {
+                $(this).toggleClass('highlighted');
+            });
         });
-    });
-</script>
+    </script>
 
 </head>
 <body>
