@@ -103,7 +103,7 @@ $pagina = "cadastro_animal.php";
             // Armazena o endereço no sessionStorage para acessar no card do animal cadastrado
             sessionStorage.setItem('userAddress', address);
             // Redireciona para a página do mapa
-            window.location.href = 'map.html';
+            window.location.href = 'index.php';
         }
     </script>
 
