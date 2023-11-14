@@ -13,7 +13,7 @@ require_once "navigation.php";
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Instagram</h5>
-        <p class="card-text">acompanhe o projeto buscachorro pelo instagram</p>
+        <p class="card-text">acompanhe o projeto buscachorro</p>
         <a href="https://www.instagram.com/buscachorro/" class="btn btn-primary">Instagram</a>
       </div>
     </div>
