@@ -2,7 +2,7 @@
 require_once("header.php");
 require_once("navigation.php");
 ?>
-
+<link rel="stylesheet" type="text/css" href="style.css">
 <body>
     <div class="container">
         <h2 class="text-center mt-4">Encontre seu animal!</h2>
