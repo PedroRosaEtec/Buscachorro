@@ -4,6 +4,9 @@ require_once "validar.php";
 require_once "navigation.php";
 
 ?>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="ModalRecSenha.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <!--<link rel="stylesheet" type="text/css" href="style.css"> -->
 
@@ -139,9 +142,7 @@ require_once "navigation.php";
 </div>
 
 
-
 <!-- Modal para recuperar senha -->
-
 <div class="modal" id="meuModal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -151,25 +152,23 @@ require_once "navigation.php";
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
-      
-    <!-- Corpo do modal -->
-<div class="modal-body">
-  <p>Insira seu endereço de e-mail para gerar um token.</p>
-  <div class="form-group">
-    <input type="email" class="form-control" id="emailInput" placeholder="Seu endereço de e-mail">
-  </div>
-</div>
-
-
+      <!-- Corpo do modal -->
+      <div class="modal-body">
+        <p>Insira seu endereço de e-mail para gerar um token.</p>
+        <div class="form-group">
+          <input type="email" class="form-control" id="emailInput" placeholder="Seu endereço de e-mail">
+        </div>
+      </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary" id="RecSenha">Gerar</button>
+        <button type="button" class="btn btn-primary" id="RecSenha" onclick="enviarEmailRecuperacao()">Gerar</button>
       </div>
 
     </div>
   </div>
 </div>
+
 
 
 <!-------------------------------------------------------------------->
