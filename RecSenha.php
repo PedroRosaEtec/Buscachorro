@@ -2,14 +2,14 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/SMTP.php';
+require 'PHPMailer-nicolau/src/Exception.php';
+require 'PHPMailer-nicolau/src/PHPMailer.php';
+require 'PHPMailer-nicolau/src/SMTP.php';
 
-// Obtenha o endereço de e-mail do POST
+// Obter o endereço de e-mail do POST
 $email = $_POST['email'];
 
-// Validar o e-mail (pode ser necessário uma validação mais robusta)
+// Validar o e-mail 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo "Por favor, insira um endereço de e-mail válido.";
     exit();
